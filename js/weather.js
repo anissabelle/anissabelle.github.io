@@ -20,7 +20,7 @@ fetch('https://api.open-meteo.com/v1/forecast?latitude=36.16&longitude=-85.5&hou
     document.getElementById("h1Time").innerHTML = "Cookeville " + `${current_time}`.substring(11,16)
     document.getElementById("h2Current_temp").innerHTML = `${current_temp}` + "℉"
     document.getElementById("h3Apparent_temp").innerHTML = "Feels Like " + `${apparent_temp}` + "℉"
-    document.getElementById("h5Current_humidity").innerHTML = `${current_humidity}` + %"
+    document.getElementById("h5Current_humidity").innerHTML = `${current_humidity}` + "%"
     document.getElementById("h5Precipitation").innerHTML = `${precipitation}` + "mm"
 
     // Pulling the current time, hourly time array
