@@ -20,7 +20,7 @@ fetch('https://api.open-meteo.com/v1/forecast?latitude=36.16&longitude=-85.5&hou
     document.getElementById("h1Time").innerHTML = "Cookeville " + `${current_time}`.substring(11,16)
     document.getElementById("h2Current_temp").innerHTML = `${current_temp}` + "℉"
     document.getElementById("h3Apparent_temp").innerHTML = "Feels Like " + `${apparent_temp}` + "℉"
-    document.getElementById("h5Current_humidity").innerHTML = `${current_humidity}` + "℉"
+    document.getElementById("h5Current_humidity").innerHTML = `${current_humidity}` + %"
     document.getElementById("h5Precipitation").innerHTML = `${precipitation}` + "mm"
 
     // Pulling the current time, hourly time array
@@ -28,6 +28,7 @@ fetch('https://api.open-meteo.com/v1/forecast?latitude=36.16&longitude=-85.5&hou
 
     // Hourly temperature for the next 4 hours including our current temperature
     // Must find the index of which our current hour is at:
+    let current_hour_index = 0
      for (let i = 0; i < hours.length; i++){
         if (hours[i].substring(11,13) === current_time.substring(11,13)){
             current_hour_index = i
@@ -135,6 +136,6 @@ fetch('https://api.open-meteo.com/v1/forecast?latitude=36.16&longitude=-85.5&hou
     - Head content tells the phone how treat your website when it is launched from the home screen
     - When someone visits the website on a phone and taps "Add to Home Screen," phone reads metadata and:
         - uses apple-touch-icon as the icon
-        - uses the titale as the app name
+        - uses the title as the app name
         - launches in standalone fullscreen mode
 */
