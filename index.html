@@ -95,3 +95,15 @@
     <script src="js/weather.js"></script>
 </body>
 </html>
+
+<!--  Use of ChatGPT: 
+
+- Understanding how to find just the hour of our current time so that my hourly temperatures are by the exact hour
+  - ChatGPT returned: const current_time = data.current.time.substring(0,13) + ":00"
+  - I asked it to explain how it works and changed it to .substring(11, 13) since I don't want the date
+- Understanding the head content which turns our website into a PWA
+    - Head content tells the phone how treat your website when it is launched from the home screen
+    - When someone visits the website on a phone and taps "Add to Home Screen," phone reads metadata and:
+        - uses apple-touch-icon as the icon
+        - uses the title as the app name
+        - launches in standalone fullscreen mode -->
