@@ -56,64 +56,64 @@ fetch('https://api.open-meteo.com/v1/forecast?latitude=36.16&longitude=-85.5&hou
         function getWeatherCodeClass(current_conditions){
         let class_name = ""
         let text = ""
-        if(current_conditions == 0){ // Weather code 0
+        if(current_conditions === 0){ // Weather code 0
             class_name = "bi bi-brightness-high-fill"
             text = "Clear Sky"
         }
         else if(current_conditions >= 1 && current_conditions <= 3){ // Weather code 1,2,3
             class_name = "bi bi-cloud-sun-fill"
-            if(current_conditions == 1){
+            if(current_conditions === 1){
                 text = "Mainly Clear"
             }
-            else if(current_conditions == 2){
+            else if(current_conditions === 2){
                 text ="Partly Cloudy"
             }
-            else if(current_conditions == 3){
+            else if(current_conditions === 3){
                 text="Overcast"
                 class_name = "bi bi-cloud-fill"
             }
         }
-        else if(current_conditions == 45 || current_conditions == 48){ // Weather code 45,48
+        else if(current_conditions === 45 || current_conditions === 48){ // Weather code 45,48
             text="Fog"
             class_name ="bi bi-cloud-fog2"
         }
-        else if(current_conditions == 51 || current_conditions == 53 || current_conditions == 55){ // Weather code 51,53,55
+        else if(current_conditions === 51 || current_conditions === 53 || current_conditions === 55){ // Weather code 51,53,55
             class_name = "bi bi-cloud-drizzle-fill"
             text = "Drizzle"
         }
-        else if(current_conditions == 56 || current_conditions == 57){ // Weather code 56,57
+        else if(current_conditions === 56 || current_conditions === 57){ // Weather code 56,57
             class_name = "bi bi-cloud-drizzle-fill"
             text = "Freezing Drizzle"
         }
-        else if(current_conditions == 61 || current_conditions == 63 || current_conditions == 65){ // Weather code 61, 63, 65
+        else if(current_conditions === 61 || current_conditions === 63 || current_conditions === 65){ // Weather code 61, 63, 65
             text = "Rain"
             class_name = "bi bi-cloud-rain-fill"
         }
-        else if(current_conditions == 66 || current_conditions == 67){ // Weather code 66, 67
+        else if(current_conditions === 66 || current_conditions === 67){ // Weather code 66, 67
             class_name = "bi bi-cloud-rain-fill"
             text = "Freezing Rain"
         }
-        else if(current_conditions == 71 || current_conditions == 73 || current_conditions == 75){ // Weather code 71,73,75
+        else if(current_conditions === 71 || current_conditions === 73 || current_conditions === 75){ // Weather code 71,73,75
             class_name = "bi bi-snow"
             text = "Snow fall"
         }
-        else if(current_conditions == 77){ // Weather code 77
+        else if(current_conditions === 77){ // Weather code 77
              class_name = "bi bi-snow2"
             text = "Snow grains"
         }
-        else if(current_conditions == 80 || current_conditions == 81 || current_conditions == 82){ // Weather code 80,81,82
+        else if(current_conditions === 80 || current_conditions === 81 || current_conditions === 82){ // Weather code 80,81,82
             class_name = "bi bi-cloud-rain-heavy-fill"
             text = "Rain Showers"
         }
-        else if(current_conditions == 85 || current_conditions == 86){ // Weather code 85,86
+        else if(current_conditions === 85 || current_conditions === 86){ // Weather code 85,86
             class_name = "bi bi-cloud-snow-fill"
             text = "Snow Showers"
         }
-        else if(current_conditions == 95){ // Weather code 95
+        else if(current_conditions === 95){ // Weather code 95
             class_name = "bi bi-cloud-lightning-rain-fill"
             text = "Thunderstorm"
         }
-        else if(current_conditions == 96 || current_conditions == 99){ // Weather code 96,99
+        else if(current_conditions === 96 || current_conditions === 99){ // Weather code 96,99
             class_name = "bi bi-cloud-lightning-rain-fill"
             text = "Thunderstorm with hail"
         }
@@ -132,7 +132,7 @@ fetch('https://api.open-meteo.com/v1/forecast?latitude=36.16&longitude=-85.5&hou
 - Understanding how to find just the hour of our current time so that my hourly temperatures are by the exact hour
   - ChatGPT returned: const current_time = data.current.time.substring(0,13) + ":00"
   - I asked it to explain how it works and changed it to .substring(11, 13) since I don't want the date
-- Understanding the head content which turns out website into a PWA
+- Understanding the head content which turns our website into a PWA
     - Head content tells the phone how treat your website when it is launched from the home screen
     - When someone visits the website on a phone and taps "Add to Home Screen," phone reads metadata and:
         - uses apple-touch-icon as the icon
